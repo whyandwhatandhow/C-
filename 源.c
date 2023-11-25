@@ -10,7 +10,7 @@ double merge1(int n, double a[], double x);
 double merge2(int n, double a[], double x);
 
 void main() {
-
+	print();
 	
 }
 
