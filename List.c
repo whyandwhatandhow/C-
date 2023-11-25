@@ -70,7 +70,11 @@ void showSeqList(SeqList L) {
 
 
 void deleteSeqListElem(SeqList* L, int i) {
-
+	if (i > L->length || i < 1) return;
+	for (int j = i; j <= L->length-1; j++) {
+		L->data[j - 1] = L->data[j];
+	}
+	L->length--;
 }
 
 void testList1() {
@@ -99,4 +103,9 @@ void testList1() {
 	int location=LocateSeqList(mylist, 666);
 	printf("666的位置在:%d", location);
 
+
+	//删除元素
+	printf("删除第二个元素后\n");
+	deleteSeqListElem(&mylist, 2);
+	showSeqList(mylist);
 }
